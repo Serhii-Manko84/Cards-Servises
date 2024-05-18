@@ -1,0 +1,134 @@
+body {
+  box-sizing: border-box;
+}
+:root {
+  --font-family: "Inter", sans-serif;
+}
+
+.cards-item {
+  margin: 0 auto;
+  padding: 30px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.cards-item-list {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  border-radius: 4px;
+  padding: 24px;
+}
+
+.cards-item-list:nth-last-of-type(1),
+.cards-item-list:nth-last-of-type(5),
+.cards-item-list:nth-last-of-type(9) {
+  border: 2px solid #179d2e;
+}
+
+.cards-item-list:nth-last-of-type(4),
+.cards-item-list:nth-last-of-type(8) {
+  border: 2px solid #0177b8;
+}
+
+.cards-item-list:nth-last-of-type(3),
+.cards-item-list:nth-last-of-type(7) {
+  border: 2px solid #f5af23;
+}
+
+.cards-item-list:nth-last-of-type(2),
+.cards-item-list:nth-last-of-type(6) {
+  border: 2px solid #f02e2c;
+}
+
+.cards-item-list-wrapper {
+  align-self: flex-end;
+}
+
+.cards-item-list-descriptions {
+  margin-bottom: 24px;
+}
+
+.cards-item-list-descriptions h2 {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 120%;
+  color: #181833;
+  margin-bottom: 24px;
+}
+
+.cards-item-list-descriptions ul {
+  list-style-type: disc;
+  color: black;
+}
+
+.cards-item-list-descriptions li {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
+  color: #2d2d2d;
+}
+
+.cards-item-list a {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #2d2d2d;
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+h1 {
+  text-align: center;
+  background-image: radial-gradient(
+    circle,
+    #179d2e 20%,
+    #0177b8 30%,
+    #f5af23 50%,
+    #f02e2c 70%
+  );
+}
+
+/* адаптив для моб. та планшетів */
+
+@media screen and (min-width: 480px) {
+  .cards-item {
+    max-width: 480px;
+  }
+  .cards-item-list {
+    flex: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cards-item {
+    max-width: 768px;
+  }
+  .cards-item-list {
+    flex: calc(50% - 24px);
+    max-width: 342px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .cards-item {
+    width: 100%;
+    min-width: 1380px;
+  }
+  .cards-item-list {
+    flex: calc(33.33% - 24px);
+    min-width: 424px;
+    justify-content: flex-start;
+  }
+
+  .cards-item-list-descriptions h2 {
+    white-space: nowrap;
+  }
+}
